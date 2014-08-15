@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F180D7D1999B3DD00E1CD4A /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F180D7C1999B3DD00E1CD4A /* MapPin.m */; };
+		1F557DB51997CB0900F055B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB41997CB0900F055B1 /* Foundation.framework */; };
+		1F557DB71997CB0900F055B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB61997CB0900F055B1 /* CoreGraphics.framework */; };
+		1F557DB91997CB0900F055B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB81997CB0900F055B1 /* UIKit.framework */; };
+		1F557DBB1997CB0900F055B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DBA1997CB0900F055B1 /* CoreData.framework */; };
+		1F557DC11997CB0900F055B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F557DBF1997CB0900F055B1 /* InfoPlist.strings */; };
+		1F557DC31997CB0900F055B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F557DC21997CB0900F055B1 /* main.m */; };
+		1F557DC71997CB0900F055B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F557DC61997CB0900F055B1 /* AppDelegate.m */; };
+		1F557DCA1997CB0900F055B1 /* MealTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F557DC81997CB0900F055B1 /* MealTime.xcdatamodeld */; };
+		1F557DCC1997CB0900F055B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F557DCB1997CB0900F055B1 /* Images.xcassets */; };
+		1F557DD31997CB0900F055B1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DD21997CB0900F055B1 /* XCTest.framework */; };
+		1F557DD41997CB0900F055B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB41997CB0900F055B1 /* Foundation.framework */; };
+		1F557DD51997CB0900F055B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB81997CB0900F055B1 /* UIKit.framework */; };
+		1F557DD61997CB0900F055B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DBA1997CB0900F055B1 /* CoreData.framework */; };
+		1F557DDE1997CB0900F055B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F557DDC1997CB0900F055B1 /* InfoPlist.strings */; };
+		1F557DE01997CB0900F055B1 /* MealTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F557DDF1997CB0900F055B1 /* MealTimeTests.m */; };
+		1F557DEB1997CC1500F055B1 /* MealTImeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F557DEA1997CC1500F055B1 /* MealTImeTableView.m */; };
+		1F557DED1997CC9E00F055B1 /* MealTimeiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F557DEC1997CC9E00F055B1 /* MealTimeiPhone.storyboard */; };
+		1F59C317199B0DD5004AEDFE /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F59C316199B0DD5004AEDFE /* locationIcon.png */; };
+		1F59C31A199B11DC004AEDFE /* VisitedRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */; };
+		1F59C31C199B179E004AEDFE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F59C31B199B179E004AEDFE /* CoreLocation.framework */; };
+		1FA9AF111998734B004E5B67 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA9AF101998734B004E5B67 /* Restaurant.m */; };
+		1FA9AF1419987AD4004E5B67 /* RestaurantDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */; };
+		1FA9AF16199887B7004E5B67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA9AF15199887B7004E5B67 /* MapKit.framework */; };
+		1FD31BEA199C52BF00EAF814 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD31BE9199C52BF00EAF814 /* Constants.m */; };
+		1FD31BEE199C664B00EAF814 /* MealTimeiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD31BED199C664B00EAF814 /* MealTimeiPad.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F557DD71997CB0900F055B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F557DA91997CB0900F055B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F557DB01997CB0900F055B1;
+			remoteInfo = MealTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F180D7B1999B3DD00E1CD4A /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		1F180D7C1999B3DD00E1CD4A /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		1F557DB11997CB0900F055B1 /* MealTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F557DB41997CB0900F055B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F557DB61997CB0900F055B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F557DB81997CB0900F055B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F557DBA1997CB0900F055B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1F557DBE1997CB0900F055B1 /* MealTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MealTime-Info.plist"; sourceTree = "<group>"; };
+		1F557DC01997CB0900F055B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F557DC21997CB0900F055B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F557DC41997CB0900F055B1 /* MealTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTime-Prefix.pch"; sourceTree = "<group>"; };
+		1F557DC51997CB0900F055B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F557DC61997CB0900F055B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F557DC91997CB0900F055B1 /* MealTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealTime.xcdatamodel; sourceTree = "<group>"; };
+		1F557DCB1997CB0900F055B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F557DD11997CB0900F055B1 /* MealTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F557DD21997CB0900F055B1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1F557DDB1997CB0900F055B1 /* MealTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MealTimeTests-Info.plist"; sourceTree = "<group>"; };
+		1F557DDD1997CB0900F055B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F557DDF1997CB0900F055B1 /* MealTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealTimeTests.m; sourceTree = "<group>"; };
+		1F557DE91997CC1500F055B1 /* MealTImeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTImeTableView.h; sourceTree = "<group>"; };
+		1F557DEA1997CC1500F055B1 /* MealTImeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTImeTableView.m; sourceTree = "<group>"; };
+		1F557DEC1997CC9E00F055B1 /* MealTimeiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MealTimeiPhone.storyboard; sourceTree = "<group>"; };
+		1F59C316199B0DD5004AEDFE /* locationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationIcon.png; sourceTree = "<group>"; };
+		1F59C318199B11DC004AEDFE /* VisitedRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitedRestaurants.h; sourceTree = "<group>"; };
+		1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedRestaurants.m; sourceTree = "<group>"; };
+		1F59C31B199B179E004AEDFE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1FA9AF0F1998734B004E5B67 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		1FA9AF101998734B004E5B67 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		1FA9AF1219987AD4004E5B67 /* RestaurantDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetails.h; sourceTree = "<group>"; };
+		1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetails.m; sourceTree = "<group>"; };
+		1FA9AF15199887B7004E5B67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1FD31BE8199C52BF00EAF814 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1FD31BE9199C52BF00EAF814 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		1FD31BED199C664B00EAF814 /* MealTimeiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MealTimeiPad.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F557DAE1997CB0900F055B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F59C31C199B179E004AEDFE /* CoreLocation.framework in Frameworks */,
+				1FA9AF16199887B7004E5B67 /* MapKit.framework in Frameworks */,
+				1F557DB71997CB0900F055B1 /* CoreGraphics.framework in Frameworks */,
+				1F557DBB1997CB0900F055B1 /* CoreData.framework in Frameworks */,
+				1F557DB91997CB0900F055B1 /* UIKit.framework in Frameworks */,
+				1F557DB51997CB0900F055B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F557DCE1997CB0900F055B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F557DD31997CB0900F055B1 /* XCTest.framework in Frameworks */,
+				1F557DD61997CB0900F055B1 /* CoreData.framework in Frameworks */,
+				1F557DD51997CB0900F055B1 /* UIKit.framework in Frameworks */,
+				1F557DD41997CB0900F055B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F557DA81997CB0900F055B1 = {
+			isa = PBXGroup;
+			children = (
+				1F557DBC1997CB0900F055B1 /* MealTime */,
+				1F557DD91997CB0900F055B1 /* MealTimeTests */,
+				1F557DB31997CB0900F055B1 /* Frameworks */,
+				1F557DB21997CB0900F055B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F557DB21997CB0900F055B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F557DB11997CB0900F055B1 /* MealTime.app */,
+				1F557DD11997CB0900F055B1 /* MealTimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F557DB31997CB0900F055B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F59C31B199B179E004AEDFE /* CoreLocation.framework */,
+				1FA9AF15199887B7004E5B67 /* MapKit.framework */,
+				1F557DB41997CB0900F055B1 /* Foundation.framework */,
+				1F557DB61997CB0900F055B1 /* CoreGraphics.framework */,
+				1F557DB81997CB0900F055B1 /* UIKit.framework */,
+				1F557DBA1997CB0900F055B1 /* CoreData.framework */,
+				1F557DD21997CB0900F055B1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F557DBC1997CB0900F055B1 /* MealTime */ = {
+			isa = PBXGroup;
+			children = (
+				1F557DC51997CB0900F055B1 /* AppDelegate.h */,
+				1F557DC61997CB0900F055B1 /* AppDelegate.m */,
+				1F557DE91997CC1500F055B1 /* MealTImeTableView.h */,
+				1F557DEA1997CC1500F055B1 /* MealTImeTableView.m */,
+				1FA9AF0F1998734B004E5B67 /* Restaurant.h */,
+				1FA9AF101998734B004E5B67 /* Restaurant.m */,
+				1FA9AF1219987AD4004E5B67 /* RestaurantDetails.h */,
+				1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */,
+				1F59C318199B11DC004AEDFE /* VisitedRestaurants.h */,
+				1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */,
+				1F557DCB1997CB0900F055B1 /* Images.xcassets */,
+				1F557DC81997CB0900F055B1 /* MealTime.xcdatamodeld */,
+				1F557DEC1997CC9E00F055B1 /* MealTimeiPhone.storyboard */,
+				1FD31BED199C664B00EAF814 /* MealTimeiPad.storyboard */,
+				1F557DBD1997CB0900F055B1 /* Supporting Files */,
+				1F180D7B1999B3DD00E1CD4A /* MapPin.h */,
+				1F180D7C1999B3DD00E1CD4A /* MapPin.m */,
+				1FD31BE8199C52BF00EAF814 /* Constants.h */,
+				1FD31BE9199C52BF00EAF814 /* Constants.m */,
+			);
+			path = MealTime;
+			sourceTree = "<group>";
+		};
+		1F557DBD1997CB0900F055B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F59C316199B0DD5004AEDFE /* locationIcon.png */,
+				1F557DBE1997CB0900F055B1 /* MealTime-Info.plist */,
+				1F557DBF1997CB0900F055B1 /* InfoPlist.strings */,
+				1F557DC21997CB0900F055B1 /* main.m */,
+				1F557DC41997CB0900F055B1 /* MealTime-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F557DD91997CB0900F055B1 /* MealTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F557DDF1997CB0900F055B1 /* MealTimeTests.m */,
+				1F557DDA1997CB0900F055B1 /* Supporting Files */,
+			);
+			path = MealTimeTests;
+			sourceTree = "<group>";
+		};
+		1F557DDA1997CB0900F055B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F557DDB1997CB0900F055B1 /* MealTimeTests-Info.plist */,
+				1F557DDC1997CB0900F055B1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F557DB01997CB0900F055B1 /* MealTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F557DE31997CB0900F055B1 /* Build configuration list for PBXNativeTarget "MealTime" */;
+			buildPhases = (
+				1F557DAD1997CB0900F055B1 /* Sources */,
+				1F557DAE1997CB0900F055B1 /* Frameworks */,
+				1F557DAF1997CB0900F055B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MealTime;
+			productName = MealTime;
+			productReference = 1F557DB11997CB0900F055B1 /* MealTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F557DD01997CB0900F055B1 /* MealTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F557DE61997CB0900F055B1 /* Build configuration list for PBXNativeTarget "MealTimeTests" */;
+			buildPhases = (
+				1F557DCD1997CB0900F055B1 /* Sources */,
+				1F557DCE1997CB0900F055B1 /* Frameworks */,
+				1F557DCF1997CB0900F055B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F557DD81997CB0900F055B1 /* PBXTargetDependency */,
+			);
+			name = MealTimeTests;
+			productName = MealTimeTests;
+			productReference = 1F557DD11997CB0900F055B1 /* MealTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F557DA91997CB0900F055B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = OpenSource;
+				TargetAttributes = {
+					1F557DD01997CB0900F055B1 = {
+						TestTargetID = 1F557DB01997CB0900F055B1;
+					};
+				};
+			};
+			buildConfigurationList = 1F557DAC1997CB0900F055B1 /* Build configuration list for PBXProject "MealTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F557DA81997CB0900F055B1;
+			productRefGroup = 1F557DB21997CB0900F055B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F557DB01997CB0900F055B1 /* MealTime */,
+				1F557DD01997CB0900F055B1 /* MealTimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F557DAF1997CB0900F055B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD31BEE199C664B00EAF814 /* MealTimeiPad.storyboard in Resources */,
+				1F557DED1997CC9E00F055B1 /* MealTimeiPhone.storyboard in Resources */,
+				1F59C317199B0DD5004AEDFE /* locationIcon.png in Resources */,
+				1F557DC11997CB0900F055B1 /* InfoPlist.strings in Resources */,
+				1F557DCC1997CB0900F055B1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F557DCF1997CB0900F055B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F557DDE1997CB0900F055B1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F557DAD1997CB0900F055B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F557DCA1997CB0900F055B1 /* MealTime.xcdatamodeld in Sources */,
+				1FA9AF111998734B004E5B67 /* Restaurant.m in Sources */,
+				1F557DC71997CB0900F055B1 /* AppDelegate.m in Sources */,
+				1F59C31A199B11DC004AEDFE /* VisitedRestaurants.m in Sources */,
+				1F180D7D1999B3DD00E1CD4A /* MapPin.m in Sources */,
+				1FA9AF1419987AD4004E5B67 /* RestaurantDetails.m in Sources */,
+				1F557DC31997CB0900F055B1 /* main.m in Sources */,
+				1F557DEB1997CC1500F055B1 /* MealTImeTableView.m in Sources */,
+				1FD31BEA199C52BF00EAF814 /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F557DCD1997CB0900F055B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F557DE01997CB0900F055B1 /* MealTimeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F557DD81997CB0900F055B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F557DB01997CB0900F055B1 /* MealTime */;
+			targetProxy = 1F557DD71997CB0900F055B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F557DBF1997CB0900F055B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F557DC01997CB0900F055B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1F557DDC1997CB0900F055B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F557DDD1997CB0900F055B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F557DE11997CB0900F055B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F557DE21997CB0900F055B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F557DE41997CB0900F055B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MealTime/MealTime-Prefix.pch";
+				INFOPLIST_FILE = "MealTime/MealTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1F557DE51997CB0900F055B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MealTime/MealTime-Prefix.pch";
+				INFOPLIST_FILE = "MealTime/MealTime-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1F557DE71997CB0900F055B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MealTime.app/MealTime";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MealTime/MealTime-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MealTimeTests/MealTimeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1F557DE81997CB0900F055B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MealTime.app/MealTime";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MealTime/MealTime-Prefix.pch";
+				INFOPLIST_FILE = "MealTimeTests/MealTimeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F557DAC1997CB0900F055B1 /* Build configuration list for PBXProject "MealTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F557DE11997CB0900F055B1 /* Debug */,
+				1F557DE21997CB0900F055B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F557DE31997CB0900F055B1 /* Build configuration list for PBXNativeTarget "MealTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F557DE41997CB0900F055B1 /* Debug */,
+				1F557DE51997CB0900F055B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F557DE61997CB0900F055B1 /* Build configuration list for PBXNativeTarget "MealTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F557DE71997CB0900F055B1 /* Debug */,
+				1F557DE81997CB0900F055B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F557DC81997CB0900F055B1 /* MealTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F557DC91997CB0900F055B1 /* MealTime.xcdatamodel */,
+			);
+			currentVersion = 1F557DC91997CB0900F055B1 /* MealTime.xcdatamodel */;
+			path = MealTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1F557DA91997CB0900F055B1 /* Project object */;
+}

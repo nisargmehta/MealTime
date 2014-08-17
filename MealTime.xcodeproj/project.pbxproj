@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F180D7D1999B3DD00E1CD4A /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F180D7C1999B3DD00E1CD4A /* MapPin.m */; };
+		1F2424FE199FCA9800B75287 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2424FD199FCA9800B75287 /* Review.m */; };
+		1F242501199FF1CF00B75287 /* ReviewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F242500199FF1CF00B75287 /* ReviewsView.m */; };
 		1F557DB51997CB0900F055B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB41997CB0900F055B1 /* Foundation.framework */; };
 		1F557DB71997CB0900F055B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB61997CB0900F055B1 /* CoreGraphics.framework */; };
 		1F557DB91997CB0900F055B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F557DB81997CB0900F055B1 /* UIKit.framework */; };
@@ -48,6 +50,10 @@
 /* Begin PBXFileReference section */
 		1F180D7B1999B3DD00E1CD4A /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		1F180D7C1999B3DD00E1CD4A /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		1F2424FC199FCA9800B75287 /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
+		1F2424FD199FCA9800B75287 /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
+		1F2424FF199FF1CF00B75287 /* ReviewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewsView.h; sourceTree = "<group>"; };
+		1F242500199FF1CF00B75287 /* ReviewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsView.m; sourceTree = "<group>"; };
 		1F557DB11997CB0900F055B1 /* MealTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F557DB41997CB0900F055B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F557DB61997CB0900F055B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -157,6 +163,10 @@
 				1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */,
 				1F59C318199B11DC004AEDFE /* VisitedRestaurants.h */,
 				1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */,
+				1F2424FC199FCA9800B75287 /* Review.h */,
+				1F2424FD199FCA9800B75287 /* Review.m */,
+				1F2424FF199FF1CF00B75287 /* ReviewsView.h */,
+				1F242500199FF1CF00B75287 /* ReviewsView.m */,
 				1F557DCB1997CB0900F055B1 /* Images.xcassets */,
 				1F557DC81997CB0900F055B1 /* MealTime.xcdatamodeld */,
 				1F557DEC1997CC9E00F055B1 /* MealTimeiPhone.storyboard */,
@@ -303,7 +313,9 @@
 				1F557DC71997CB0900F055B1 /* AppDelegate.m in Sources */,
 				1F59C31A199B11DC004AEDFE /* VisitedRestaurants.m in Sources */,
 				1F180D7D1999B3DD00E1CD4A /* MapPin.m in Sources */,
+				1F2424FE199FCA9800B75287 /* Review.m in Sources */,
 				1FA9AF1419987AD4004E5B67 /* RestaurantDetails.m in Sources */,
+				1F242501199FF1CF00B75287 /* ReviewsView.m in Sources */,
 				1F557DC31997CB0900F055B1 /* main.m in Sources */,
 				1F557DEB1997CC1500F055B1 /* MealTImeTableView.m in Sources */,
 				1FD31BEA199C52BF00EAF814 /* Constants.m in Sources */,

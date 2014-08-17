@@ -11,6 +11,7 @@
 #import "RestaurantDetails.h"
 #import "VisitedRestaurants.h"
 #import "Constants.h"
+#import "AppDelegate.h"
 
 @interface MealTimeTableView ()
 {
@@ -33,7 +34,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // AJNotificationView
+    
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     
@@ -69,6 +72,7 @@
     // Get the data
     NSURLResponse *response;
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    // TODO: error handling 
     NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSMutableArray *restaurants = [[NSMutableArray alloc] init];
     NSArray *array = [jsonDictionary valueForKeyPath:@"response.venues"];
@@ -76,10 +80,26 @@
     for(NSDictionary *dict in array) {
         // Create a new post object for each one and initialise it with information in the dictionary
         Restaurant *restaurant = [[Restaurant alloc] initWithJSONDictionary:dict];
-        // TODO: check if its thumbsDown if yes dont add 
-        [restaurants addObject:restaurant];
+        // check if its thumbsDown if yes dont add
+        if (![self isThumbsDown:restaurant.name restaurantCity:restaurant.city])
+        {
+            [restaurants addObject:restaurant];
+        }
     }
     return restaurants;
+}
+
+-(BOOL)isThumbsDown:(NSString*)name restaurantCity:(NSString*)city 
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:kRestaurant inManagedObjectContext:self.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name == %@ AND city == %@ AND thumbsDown = true", name, city]];
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (results.count > 0)
+        return true;
+    else
+        return false;
 }
 
 #pragma mark - Table view data source
@@ -167,10 +187,10 @@
     [locationManager startUpdatingLocation];
 }
 
--(void)barButtonPressed
-{
-    [self performSegueWithIdentifier:kVisitedRestaurants sender:nil];
-}
+//-(void)barButtonPressed
+//{
+//    //[self performSegueWithIdentifier:kVisitedRestaurants sender:nil];
+//}
 
 -(void)showAlert:(NSString*)message
 {
@@ -196,7 +216,6 @@
     __block NSString *zipcode = @"";
     // Reverse Geocoding
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             zipcode = placemark.postalCode;

@@ -16,6 +16,8 @@
 @property (strong, nonatomic) Restaurant *rest;
 @property (nonatomic,retain) IBOutlet MKMapView *restaurantLocation;
 @property (nonatomic, retain) IBOutlet UIButton *visitedButton;
+@property (nonatomic, retain) IBOutlet UIButton *thumsDownButton;
+@property (nonatomic, retain) IBOutlet UIButton *reviewsButton;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction) vistedPressed;

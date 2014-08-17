@@ -41,6 +41,7 @@
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:kRestaurant inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"thumbsDown != true"]];
     NSError *error;
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSMutableArray *restaurants = [[NSMutableArray alloc] init];
@@ -113,6 +114,27 @@
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         // http://stackoverflow.com/questions/10482311/delete-an-object-in-core-data
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        [fetchRequest setEntity:[NSEntityDescription entityForName:kRestaurant inManagedObjectContext:self.managedObjectContext]];
+        
+        Restaurant *deleteRestaurant = [_restaurants objectAtIndex:indexPath.row];
+        NSString *name = deleteRestaurant.name;
+        NSString *city = deleteRestaurant.city;
+        
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"name == %@ AND city == %@", name, city]];
+        NSError* error = nil;
+        NSArray* results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (NSManagedObject *managed in results)
+        {
+            [self.managedObjectContext deleteObject:managed];
+        }
+        NSError *saveError = nil;
+        if ([self.managedObjectContext save:&saveError] == NO) {
+            NSAssert(NO, @"Save should not fail\n%@", [saveError localizedDescription]);
+            abort();
+        }
     }
 }
 

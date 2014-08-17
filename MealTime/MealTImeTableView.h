@@ -16,9 +16,10 @@
     CLPlacemark *placemark;
 }
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain) IBOutlet UITableView *tableView;
 @property(nonatomic,retain) IBOutlet UISearchBar *searchBar;
 
-- (IBAction) barButtonPressed;
+//- (IBAction) barButtonPressed;
 
 @end

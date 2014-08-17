@@ -41,7 +41,6 @@
                     <navigationItem key="navigationItem" title="Restaurants" id="1mF-g0-BUf">
                         <barButtonItem key="rightBarButtonItem" title="Visited" id="ofs-zV-Whl">
                             <connections>
-                                <action selector="barButtonPressed" destination="2QF-D1-rh3" id="ZCB-nu-ARN"/>
                                 <segue destination="bw0-86-A4F" kind="push" identifier="visitedRestaurants" id="Vy6-7F-efT"/>
                             </connections>
                         </barButtonItem>
@@ -129,7 +128,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kp6-nb-dO7">
                                 <rect key="frame" x="0.0" y="428" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mark Visited">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -139,18 +138,21 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acU-JY-kdg">
                                 <rect key="frame" x="0.0" y="470" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Thumbs Down">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boo-0H-4W7">
-                                <rect key="frame" x="0.0" y="510" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reviews">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5mT-1I-yBQ" kind="push" id="7FG-Q4-aHs"/>
+                                    <action selector="thumbsDownPressed" destination="LM7-oj-lRt" eventType="touchUpInside" id="rQz-81-Wia"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boo-0H-4W7">
+                                <rect key="frame" x="0.0" y="510" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5mT-1I-yBQ" kind="push" identifier="toReviews" id="7FG-Q4-aHs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -179,6 +181,8 @@
                     <connections>
                         <outlet property="content" destination="mnv-re-gST" id="l9E-cg-Vmt"/>
                         <outlet property="restaurantLocation" destination="0tf-RM-23g" id="4Fi-nW-lly"/>
+                        <outlet property="reviewsButton" destination="Boo-0H-4W7" id="vaI-jL-Jic"/>
+                        <outlet property="thumsDownButton" destination="acU-JY-kdg" id="me9-xI-bD7"/>
                         <outlet property="visitedButton" destination="kp6-nb-dO7" id="AjD-4A-gVi"/>
                     </connections>
                 </viewController>
@@ -186,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1286" y="-26"/>
         </scene>
-        <!--View Controller - Reviews-->
+        <!--Reviews View - Reviews-->
         <scene sceneID="gY9-XN-jCO">
             <objects>
-                <viewController id="5mT-1I-yBQ" sceneMemberID="viewController">
+                <viewController id="5mT-1I-yBQ" customClass="ReviewsView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GGo-9g-ra9"/>
                         <viewControllerLayoutGuide type="bottom" id="QaA-8J-0HR"/>
@@ -198,18 +202,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JFf-vd-YXT">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="JFf-vd-YXT">
                                 <rect key="frame" x="87" y="72" width="144" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged" destination="5mT-1I-yBQ" eventType="valueChanged" id="9hX-ny-iDj"/>
+                                </connections>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write review here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHe-FR-vQg">
-                                <rect key="frame" x="0.0" y="110" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIs-1c-gIM">
-                                <rect key="frame" x="0.0" y="205" width="320" height="363"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIs-1c-gIM">
+                                <rect key="frame" x="0.0" y="220" width="320" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -217,11 +218,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2V-uv-4Q2">
-                                <rect key="frame" x="0.0" y="148" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="180" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Review">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addReviewPressed" destination="5mT-1I-yBQ" eventType="touchUpInside" id="xvd-A0-0vg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFf-ye-rEI">
                                 <rect key="frame" x="16" y="76" width="70" height="21"/>
@@ -230,16 +234,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I03-9g-sMb">
-                                <rect key="frame" x="244" y="76" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I03-9g-sMb">
+                                <rect key="frame" x="244" y="74" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write review here" translatesAutoresizingMaskIntoConstraints="NO" id="laR-yn-Whm">
+                                <rect key="frame" x="0.0" y="110" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reviews" id="8XY-N8-Ql1"/>
+                    <connections>
+                        <outlet property="addReview" destination="B2V-uv-4Q2" id="X9t-6V-jO7"/>
+                        <outlet property="enterReviewTextView" destination="laR-yn-Whm" id="sRk-Hj-nxM"/>
+                        <outlet property="ratingLabel" destination="I03-9g-sMb" id="21e-jc-Oen"/>
+                        <outlet property="ratingSlider" destination="JFf-vd-YXT" id="zPP-6O-DbM"/>
+                        <outlet property="reviewsTextView" destination="WIs-1c-gIM" id="Wah-3T-TrU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC6-1Z-1hS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,6 +289,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KxA-Dd-fMq"/>
+        <segue reference="zRK-Ga-HC2"/>
     </inferredMetricsTieBreakers>
 </document>

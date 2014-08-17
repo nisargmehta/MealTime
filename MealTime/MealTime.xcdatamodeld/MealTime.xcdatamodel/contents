@@ -17,7 +17,7 @@
         <attribute name="textDescription" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Restaurant" positionX="0" positionY="0" width="128" height="195"/>
-        <element name="Review" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Restaurant" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Review" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

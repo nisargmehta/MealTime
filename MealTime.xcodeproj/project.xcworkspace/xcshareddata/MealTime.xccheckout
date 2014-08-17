@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>297E495B-B81E-4F18-8183-D8534CC785B5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MealTime</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C7A9DBCC-0E51-4925-85B3-9CD5CCC5F5DD</key>
+		<string>https://github.com/nisargmehta/MealTime.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MealTime.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C7A9DBCC-0E51-4925-85B3-9CD5CCC5F5DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nisargmehta/MealTime.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C7A9DBCC-0E51-4925-85B3-9CD5CCC5F5DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7A9DBCC-0E51-4925-85B3-9CD5CCC5F5DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MealTime</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -14,11 +14,14 @@
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
+    UIActivityIndicatorView *activity;
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain) IBOutlet UITableView *tableView;
 @property(nonatomic,retain) IBOutlet UISearchBar *searchBar;
+@property BOOL fromSearchBar;
+@property BOOL fromLocationIcon;
 
 //- (IBAction) barButtonPressed;
 

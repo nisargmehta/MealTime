@@ -20,5 +20,6 @@
 @property (copy) NSString *phoneNumber;
 @property (copy) NSNumber *latitude;
 @property (copy) NSNumber *longitude;
+@property float distance;
 
 @end

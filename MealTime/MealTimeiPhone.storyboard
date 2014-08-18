@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Meal Time Table View - Restaurants-->
+        <!--Meal Time Table View - MealTime-->
         <scene sceneID="aaw-Ym-9lh">
             <objects>
                 <tableViewController id="2QF-D1-rh3" customClass="MealTimeTableView" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OIW-T4-cw6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="44" id="OIW-T4-cw6">
                                 <rect key="frame" x="0.0" y="161" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OIW-T4-cw6" id="5yS-hq-mfa">
@@ -38,10 +38,15 @@
                             <outlet property="delegate" destination="2QF-D1-rh3" id="Sdy-J9-QH2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Restaurants" id="1mF-g0-BUf">
-                        <barButtonItem key="rightBarButtonItem" title="Visited" id="ofs-zV-Whl">
+                    <navigationItem key="navigationItem" title="MealTime" id="1mF-g0-BUf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="LdF-UJ-0wY">
                             <connections>
-                                <segue destination="bw0-86-A4F" kind="push" identifier="visitedRestaurants" id="Vy6-7F-efT"/>
+                                <segue destination="bw0-86-A4F" kind="push" identifier="visitedRestaurants" id="oWL-kt-EZ5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ih9-b0-1Gj">
+                            <connections>
+                                <segue destination="bw0-86-A4F" kind="push" identifier="thumbDownedRestaurants" id="oaf-n5-LCx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShM-cH-YnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="-761"/>
+            <point key="canvasLocation" x="1173" y="-657"/>
         </scene>
         <!--Restaurant Details - Details-->
         <scene sceneID="rAx-Uf-0zt">
@@ -114,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="140" width="320" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-re-gST">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-re-gST">
                                 <rect key="frame" x="5" y="70" width="310" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuV-eO-rJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="-26"/>
+            <point key="canvasLocation" x="1738" y="-118"/>
         </scene>
         <!--Reviews View - Reviews-->
         <scene sceneID="gY9-XN-jCO">
@@ -209,16 +214,15 @@
                                     <action selector="sliderValueChanged" destination="5mT-1I-yBQ" eventType="valueChanged" id="9hX-ny-iDj"/>
                                 </connections>
                             </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIs-1c-gIM">
-                                <rect key="frame" x="0.0" y="220" width="320" height="350"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIs-1c-gIM">
+                                <rect key="frame" x="0.0" y="240" width="320" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2V-uv-4Q2">
-                                <rect key="frame" x="0.0" y="180" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="175" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Review">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -247,6 +251,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJX-xM-6lk">
+                                <rect key="frame" x="6" y="215" width="300" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -257,11 +268,12 @@
                         <outlet property="ratingLabel" destination="I03-9g-sMb" id="21e-jc-Oen"/>
                         <outlet property="ratingSlider" destination="JFf-vd-YXT" id="zPP-6O-DbM"/>
                         <outlet property="reviewsTextView" destination="WIs-1c-gIM" id="Wah-3T-TrU"/>
+                        <outlet property="statusLabel" destination="YJX-xM-6lk" id="vTl-Pp-ZvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC6-1Z-1hS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="746"/>
+            <point key="canvasLocation" x="1898" y="646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8H7-O7-Nqn">
@@ -290,5 +302,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zRK-Ga-HC2"/>
+        <segue reference="oaf-n5-LCx"/>
     </inferredMetricsTieBreakers>
 </document>

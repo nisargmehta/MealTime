@@ -16,6 +16,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *addReview;
 @property (nonatomic, retain) IBOutlet UITextView *enterReviewTextView;
 @property (nonatomic, retain) IBOutlet UITextView *reviewsTextView;
+@property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 @property (retain) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 

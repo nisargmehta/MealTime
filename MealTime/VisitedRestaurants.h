@@ -12,5 +12,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain) IBOutlet UITableView *tableView;
+@property BOOL isVisitedRestaurant;
 
 @end

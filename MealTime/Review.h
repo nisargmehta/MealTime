@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Review : NSObject
+@interface Review : NSManagedObject
 
-@property (copy) NSNumber *stars;
-@property (copy) NSString *description;
+@property (nonatomic,retain) NSNumber *stars;
+@property (nonatomic,retain) NSString *description;
+@property (nonatomic,retain) NSString *date;
 
 @end

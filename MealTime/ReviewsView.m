@@ -30,16 +30,20 @@
 {
     [super viewDidLoad];
 
+    self.enterReviewTextView.delegate = self;
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     
     NSString *content = [self fetchAllReviews];
     if (content.length != 0)
+    {
         self.reviewsTextView.text = content;
+    }
     else
-        self.reviewsTextView.text = [NSString stringWithFormat:@"%@%@",kNoReviews,self.rest.name];
+    {
+        self.statusLabel.text = [NSString stringWithFormat:@"%@%@",kNoReviews,self.rest.name];
+    }
     self.ratingLabel.text = [NSString stringWithFormat:@"%d",(int)roundf(self.ratingSlider.value)];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,18 +65,23 @@
     NSMutableSet *reviewsSet = [restaurant valueForKey:kReviewForVisited];
     NSString *content = @"";
     NSArray *reviews = [reviewsSet allObjects];
+    NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:kDateAdded ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObject:valueDescriptor];
+    reviews = [reviews sortedArrayUsingDescriptors:descriptors];
     for(int i=0; i<reviews.count; i++)
     {
         int rating = [[reviews[i] valueForKey:kstars] intValue];
         NSString *desc = [reviews[i] valueForKey:kdescription];
-        content = [content stringByAppendingString:[self getReviewText:[NSString stringWithFormat:@"%d",rating] description:desc]];
+        NSDate *date = [reviews[i] valueForKey:kDateAdded];
+        content = [content stringByAppendingString:[self getReviewText:[NSString stringWithFormat:@"%d",rating] description:desc currentDate:date]];
     }
+    self.statusLabel.text = [NSString stringWithFormat:@"%lu reviews for %@",(unsigned long)reviews.count,self.rest.name];
     return content;
 }
 
--(NSString *) getReviewText:(NSString*)rating description:(NSString*)desc
+-(NSString *) getReviewText:(NSString*)rating description:(NSString*)desc currentDate:(NSDate*)date
 {
-    return [NSString stringWithFormat:@"Rating: %@\nDescription: %@\n\n\n",rating,desc];
+    return [NSString stringWithFormat:@"Rating: %@\t\tDate: %@\nDescription: %@\n\n\n",rating,[[self getDateFormatter] stringFromDate:date],desc];
 }
 
 -(void)sliderValueChanged
@@ -88,9 +97,19 @@
     if (!([text isEqualToString:kNewReviewPlaceholder] || [text isEqualToString:@""]))
     {
         [self saveReview];
+        self.reviewsTextView.text = [self fetchAllReviews];
     }
     else
-        NSLog(@"cant add review");
+    {
+        [self showAlert:@"Write the review to add it"];
+    }
+}
+
+-(void)showAlert:(NSString*)message
+{
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Warning" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
 }
 
 -(void)saveReview
@@ -100,11 +119,12 @@
     [fetchRequest setEntity:[NSEntityDescription entityForName:kRestaurant inManagedObjectContext:self.managedObjectContext]];
     
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"name == %@ AND city == %@", self.rest.name, self.rest.city]];
-    
     NSManagedObject *newReview = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription
                                                                           entityForName:kReview inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
     [newReview setValue:[NSNumber numberWithInt:[self.ratingLabel.text intValue]] forKey:kstars];
     [newReview setValue:self.enterReviewTextView.text forKey:kdescription];
+    NSDateFormatter *format = [self getDateFormatter];
+    [newReview setValue:[format dateFromString:[format stringFromDate:[NSDate date]]] forKey:kDateAdded];
     
     NSError* error = nil;
     NSArray* results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -116,6 +136,23 @@
     NSError *saveError;
     if (![self.managedObjectContext save:&saveError]) {
         NSLog(@"couldn't save: %@", [saveError localizedDescription]);
+    }
+}
+
+-(NSDateFormatter*)getDateFormatter
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale: usLocale];
+    [dateFormatter setDateFormat:kDateFormat];
+    return dateFormatter;
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if (textView == self.enterReviewTextView)
+    {
+        self.enterReviewTextView.text = @"";
     }
 }
 

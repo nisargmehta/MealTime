@@ -18,7 +18,7 @@
 
 @implementation VisitedRestaurants
 {
-    NSArray *_restaurants;
+    NSMutableArray *_restaurants;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -37,11 +37,41 @@
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(RefreshTableView:)
+                                                 name:kRestaurantRemoved object:nil];
+    
+    [self getRestaurantList];
+}
+
+- (void)RefreshTableView:(NSNotification *)note
+{
+    Restaurant *removedRest = [[note userInfo] valueForKey:kObjectRestaurant];
+    [_restaurants enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(Restaurant *r, NSUInteger index, BOOL *stop) {
+        if ([r.name isEqualToString:removedRest.name] && [r.city isEqualToString:removedRest.city])
+        {
+            [_restaurants removeObjectAtIndex:index];
+        }
+    }];
+    [self.tableView reloadData];
+}
+
+-(void)getRestaurantList
+{
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:kRestaurant inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"thumbsDown != true"]];
+    if (self.isVisitedRestaurant)
+    {
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"thumbsDown != true"]];
+        self.navigationItem.title = @"Saved Restaurants";
+    }
+    else
+    {
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"thumbsDown == true"]];
+        self.navigationItem.title = @"Disliked Restaurants";
+    }
     NSError *error;
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSMutableArray *restaurants = [[NSMutableArray alloc] init];
@@ -96,23 +126,19 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (self.isVisitedRestaurant)
+        return @"Delete";
+    else
+        return kRemove;
 }
-*/
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         // http://stackoverflow.com/questions/10482311/delete-an-object-in-core-data
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -134,29 +160,23 @@
         if ([self.managedObjectContext save:&saveError] == NO) {
             NSAssert(NO, @"Save should not fail\n%@", [saveError localizedDescription]);
             abort();
+            return;
         }
+        [_restaurants removeObjectAtIndex:indexPath.row];
+        // delete the row
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"Selected %@",indexPath);
+    if (!self.isVisitedRestaurant)
+    {
+        return;
+    }
     [self performSegueWithIdentifier:kVisitedToDetails sender:indexPath];
 }
 
@@ -175,5 +195,10 @@
         detail.rest = rest;
     }
 }
+
+//-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//    
+//}
 
 @end

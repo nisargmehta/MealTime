@@ -10,6 +10,10 @@
 
 @implementation Review
 
+@dynamic stars;
+@dynamic description;
+@dynamic date;
+
 - (id)init
 {
     self = [super init];

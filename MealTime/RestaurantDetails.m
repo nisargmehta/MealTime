@@ -126,6 +126,8 @@
     {
         NSLog(@"Unresolved error %@, %@", saveError, [saveError userInfo]);
     }
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:self.rest forKey:kObjectRestaurant];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRestaurantRemoved object:nil userInfo:dictionary];
 }
 
 - (void)saveRestaurant:(BOOL)thumbsDown

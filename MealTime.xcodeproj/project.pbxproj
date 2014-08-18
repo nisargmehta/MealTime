@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F121C4719A1935C003A113C /* MealTimeiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F121C4619A1935C003A113C /* MealTimeiPad.storyboard */; };
+		1F121C4A19A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F121C4919A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.m */; };
 		1F180D7D1999B3DD00E1CD4A /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F180D7C1999B3DD00E1CD4A /* MapPin.m */; };
 		1F2424FE199FCA9800B75287 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2424FD199FCA9800B75287 /* Review.m */; };
 		1F242501199FF1CF00B75287 /* ReviewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F242500199FF1CF00B75287 /* ReviewsView.m */; };
@@ -48,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F121C4619A1935C003A113C /* MealTimeiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MealTimeiPad.storyboard; sourceTree = "<group>"; };
+		1F121C4819A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+MultipleButtonsAddition.h"; sourceTree = "<group>"; };
+		1F121C4919A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+MultipleButtonsAddition.m"; sourceTree = "<group>"; };
 		1F180D7B1999B3DD00E1CD4A /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		1F180D7C1999B3DD00E1CD4A /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		1F2424FC199FCA9800B75287 /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
@@ -118,6 +123,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F121C4B19A1AD95003A113C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F557DE91997CC1500F055B1 /* MealTImeTableView.h */,
+				1F557DEA1997CC1500F055B1 /* MealTImeTableView.m */,
+				1FA9AF1219987AD4004E5B67 /* RestaurantDetails.h */,
+				1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */,
+				1F59C318199B11DC004AEDFE /* VisitedRestaurants.h */,
+				1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */,
+				1F2424FF199FF1CF00B75287 /* ReviewsView.h */,
+				1F242500199FF1CF00B75287 /* ReviewsView.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1F121C4C19A1ADB4003A113C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FA9AF0F1998734B004E5B67 /* Restaurant.h */,
+				1FA9AF101998734B004E5B67 /* Restaurant.m */,
+				1F2424FC199FCA9800B75287 /* Review.h */,
+				1F2424FD199FCA9800B75287 /* Review.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1F121C4D19A1ADCE003A113C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1F324F3E19A1122400D7ED57 /* Reachability.h */,
+				1F324F3F19A1122400D7ED57 /* Reachability.m */,
+				1F121C4819A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.h */,
+				1F121C4919A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.m */,
+				1F180D7B1999B3DD00E1CD4A /* MapPin.h */,
+				1F180D7C1999B3DD00E1CD4A /* MapPin.m */,
+				1FD31BE8199C52BF00EAF814 /* Constants.h */,
+				1FD31BE9199C52BF00EAF814 /* Constants.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		1F557DA81997CB0900F055B1 = {
 			isa = PBXGroup;
 			children = (
@@ -156,28 +202,14 @@
 			children = (
 				1F557DC51997CB0900F055B1 /* AppDelegate.h */,
 				1F557DC61997CB0900F055B1 /* AppDelegate.m */,
-				1F324F3E19A1122400D7ED57 /* Reachability.h */,
-				1F324F3F19A1122400D7ED57 /* Reachability.m */,
-				1F557DE91997CC1500F055B1 /* MealTImeTableView.h */,
-				1F557DEA1997CC1500F055B1 /* MealTImeTableView.m */,
-				1FA9AF0F1998734B004E5B67 /* Restaurant.h */,
-				1FA9AF101998734B004E5B67 /* Restaurant.m */,
-				1FA9AF1219987AD4004E5B67 /* RestaurantDetails.h */,
-				1FA9AF1319987AD4004E5B67 /* RestaurantDetails.m */,
-				1F59C318199B11DC004AEDFE /* VisitedRestaurants.h */,
-				1F59C319199B11DC004AEDFE /* VisitedRestaurants.m */,
-				1F2424FC199FCA9800B75287 /* Review.h */,
-				1F2424FD199FCA9800B75287 /* Review.m */,
-				1F2424FF199FF1CF00B75287 /* ReviewsView.h */,
-				1F242500199FF1CF00B75287 /* ReviewsView.m */,
+				1F121C4C19A1ADB4003A113C /* Model */,
+				1F121C4B19A1AD95003A113C /* Controllers */,
+				1F121C4D19A1ADCE003A113C /* Utility */,
 				1F557DCB1997CB0900F055B1 /* Images.xcassets */,
 				1F557DC81997CB0900F055B1 /* MealTime.xcdatamodeld */,
+				1F121C4619A1935C003A113C /* MealTimeiPad.storyboard */,
 				1F557DEC1997CC9E00F055B1 /* MealTimeiPhone.storyboard */,
 				1F557DBD1997CB0900F055B1 /* Supporting Files */,
-				1F180D7B1999B3DD00E1CD4A /* MapPin.h */,
-				1F180D7C1999B3DD00E1CD4A /* MapPin.m */,
-				1FD31BE8199C52BF00EAF814 /* Constants.h */,
-				1FD31BE9199C52BF00EAF814 /* Constants.m */,
 			);
 			path = MealTime;
 			sourceTree = "<group>";
@@ -287,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F121C4719A1935C003A113C /* MealTimeiPad.storyboard in Resources */,
 				1F557DED1997CC9E00F055B1 /* MealTimeiPhone.storyboard in Resources */,
 				1F59C317199B0DD5004AEDFE /* locationIcon.png in Resources */,
 				1F557DC11997CB0900F055B1 /* InfoPlist.strings in Resources */,
@@ -320,6 +353,7 @@
 				1F557DC31997CB0900F055B1 /* main.m in Sources */,
 				1F557DEB1997CC1500F055B1 /* MealTImeTableView.m in Sources */,
 				1F324F4019A1122400D7ED57 /* Reachability.m in Sources */,
+				1F121C4A19A1A7D4003A113C /* UINavigationItem+MultipleButtonsAddition.m in Sources */,
 				1FD31BEA199C52BF00EAF814 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
